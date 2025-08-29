@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portofolio - Muhamad Fauzi Abilana</title>
+  <style>
+    * {margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif;}
+    body {background: #f5f7fa; color: #333; line-height: 1.6; font-size: 16px;}
+    header {background: #1e3a8a; color: #fff; padding: 20px; text-align: center; position: sticky; top: 0; z-index: 1000;}
+    header h1 {font-size: 1.8rem;}
+    nav {margin-top: 10px; display: flex; justify-content: center; flex-wrap: wrap;}
+    nav a {color: #fff; text-decoration: none; margin: 5px 10px; font-size: 1rem; transition: color 0.3s;}
+    nav a:hover {color: #facc15;}
+    section {padding: 50px 20px; max-width: 900px; margin: auto; opacity: 0; transform: translateY(20px); transition: all 0.6s ease-in-out;}
+    section.show {opacity: 1; transform: translateY(0);}
+    h2 {font-size: 1.6rem; margin-bottom: 20px; color: #1e3a8a;}
+    .projects {display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;}
+    .card {background: #fff; padding: 20px; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); transition: transform 0.3s;}
+    .card:hover {transform: translateY(-5px);}
+    .btn {display: inline-block; margin-top: 15px; padding: 12px 22px; background: #1e3a8a; color: #fff; text-decoration: none; border-radius: 8px; transition: background 0.3s; font-size: 1rem;}
+    .btn:hover {background: #3b82f6;}
+    footer {background: #1e3a8a; color: #fff; text-align: center; padding: 15px; margin-top: 30px; font-size: 0.9rem;}
+    html { scroll-behavior: smooth; }
+
+    /* Mobile Friendly */
+    @media (max-width: 768px) {
+      body {font-size: 15px;}
+      header h1 {font-size: 1.5rem;}
+      section {padding: 40px 15px;}
+      h2 {font-size: 1.4rem;}
+      .projects {grid-template-columns: 1fr;} /* jadi 1 kolom di mobile */
+      .btn {width: 100%; text-align: center;} /* tombol full width */
+    }
+    @media (max-width: 480px) {
+      header h1 {font-size: 1.2rem;}
+      nav a {font-size: 0.9rem; margin: 5px;}
+      h2 {font-size: 1.2rem;}
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Muhamad Fauzi Abilana</h1>
+    <nav>
+      <a href="#about">Tentang</a>
+      <a href="#projects">Portofolio</a>
+      <a href="#skills">Keahlian</a>
+      <a href="#contact">Kontak</a>
+    </nav>
+  </header>
+
+  <section id="about">
+    <h2>Tentang Saya</h2>
+    <p>Saya adalah siswa SMK jurusan <b>Teknik Komputer dan Jaringan</b> yang memiliki pengalaman magang selama 6 bulan di bidang perbaikan komputer, printer, dan instalasi CCTV. Terampil dalam instalasi perangkat keras dan jaringan dasar, serta memiliki semangat belajar tinggi dan siap bekerja secara profesional.</p>
+    <a class="btn" href="https://drive.google.com/uc?export=download&id=1REQNki45Q7tPuw9HhzyQr-Qzk1F_RgCO" target="_blank">📄 Download CV</a>
+  </section>
+
+  <section id="projects">
+    <h2>Pengalaman Magang</h2>
+    <div class="projects">
+      <div class="card">
+        <h3>TMF Computer - Mojokerto</h3>
+        <p>Magang selama 6 bulan, fokus pada:</p>
+        <ul>
+          <li>Perbaikan printer dan komputer</li>
+          <li>Instalasi & setting CCTV</li>
+          <li>Instalasi sistem operasi</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Keahlian</h2>
+    <div class="projects">
+      <div class="card"><p>🖥️ Instalasi & perbaikan komputer</p></div>
+      <div class="card"><p>🖨️ Mahir menangani berbagai jenis printer</p></div>
+      <div class="card"><p>📹 Pemasangan & setting CCTV</p></div>
+      <div class="card"><p>🌐 Pemahaman dasar jaringan komputer</p></div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Kontak</h2>
+    <p>📍 Lamongan, Jawa Timur</p>
+    <p>📞 0813 3302 2731</p>
+    <p>📧 <a href="mailto:fauzyabilana@gmail.com">fauzyabilana@gmail.com</a></p>
+  </section>
+
+  <footer>
+    <p>© 2025 Muhamad Fauzi Abilana - Portofolio</p>
+  </footer>
+
+  <script>
+    // Animasi muncul saat scroll
+    const sections = document.querySelectorAll("section");
+    window.addEventListener("scroll", () => {
+      const triggerBottom = window.innerHeight * 0.85;
+      sections.forEach(sec => {
+        const boxTop = sec.getBoundingClientRect().top;
+        if(boxTop < triggerBottom){
+          sec.classList.add("show");
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
